@@ -5,5 +5,8 @@
  * @returns {object} - returns the new object
  */
 export const omit = (obj, ...fields) => {
-
+  return fields.reduce((cur, value) => {
+    delete cur[value]
+    return cur;
+  }, obj);
 };
